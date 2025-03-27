@@ -1,24 +1,4 @@
 # README
+In this project I will be working with rails form builder methods to generate forms.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+We'll start by building a form normally with plain html then using the form_with methods to see how these help with form creation.
