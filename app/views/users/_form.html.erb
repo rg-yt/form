@@ -1,0 +1,44 @@
+
+<%= form_with model: user, class: "form" do |form| %>
+  <div class="title">
+    Welcome
+  </div>
+
+  <div class="subtitle">
+    Let's create your account!  
+  </div>
+
+  <div class="input-container ic1">
+    <%= form.email_field :email, class: "input", placeholder: " "%>
+    <div class="cut"></div>
+    <%= form.label :email, "Email:", class: "placeholder" %>
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="input-container ic2">
+    <%= form.text_field :username, class: "input", placeholder: " "%>
+    <div class="cut"></div>
+    <%= form.label :username, "Username:", class: "placeholder" %>
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="input-container ic2">
+    <%= form.password_field :password, class: "input", placeholder: " " %>
+    <div class="cut cut-short"></div>
+    <%= form.label :password, "Password:", class: "placeholder" %>
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <%= form.submit class: "submit"%>
+<% end %>
