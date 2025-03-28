@@ -27,13 +27,38 @@
 <% end %> 
 
 -->
+
 <%= form_with model: @user do |form| %>
-  <%= form.label :email, "Email:" %>
-  <%= form.email_field :email %>
-  <%= form.label :username, "Username:" %>
-  <%= form.text_field :username %>
-  <%= form.label :password, "Password:" %>
-  <%= form.password_field :password %>
+  <div>
+    <%= form.label :email, "Email:" %>
+    <%= form.email_field :email %>
+    
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :username, "Username:" %>
+    <%= form.text_field :username %>
+
+    <% @user.errors.full_messages_for(:username).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+  <div>
+    <%= form.label :password, "Password:" %>
+    <%= form.password_field :password %>
+
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
   <%= form.submit %>
 <% end %>
 
